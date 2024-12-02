@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{660EC90C-2463-4372-AD9C-FD9B49134E9B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OPCAE</RootNamespace>
+    <AssemblyName>OPCAE</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NChardet, Version=1.0.1.32331, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NChardet.1.0.1.6\lib\net35\NChardet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="OPCAE\Contract\IOPCEventAreaBrowser.cs" />
+    <Compile Include="OPCAE\Contract\IOPCEventServer.cs" />
+    <Compile Include="OPCAE\Contract\IOPCEventServer2.cs" />
+    <Compile Include="OPCAE\Contract\IOPCEventSink.cs" />
+    <Compile Include="OPCAE\Contract\IOPCEventSubscriptionMgt.cs" />
+    <Compile Include="OPCAE\Contract\IOPCEventSubscriptionMgt2.cs" />
+    <Compile Include="OPCAE\DUMMY_VARIANT.cs" />
+    <Compile Include="OPCAE\IEnumGUID.cs" />
+    <Compile Include="OPCAE\IOPCServerList.cs" />
+    <Compile Include="OPCAE\NET\AreaBrowser.cs" />
+    <Compile Include="OPCAE\NET\EventServerStatus.cs" />
+    <Compile Include="OPCAE\NET\EventSubscriptionMgt0.cs" />
+    <Compile Include="OPCAE\NET\EventSubscriptionMgt.cs" />
+    <Compile Include="OPCAE\NET\OnAEeventHandler.cs" />
+    <Compile Include="OPCAE\NET\OPCChangeMask.cs" />
+    <Compile Include="OPCAE\NET\OpcConvert.cs" />
+    <Compile Include="OPCAE\NET\OpcEventServer.cs" />
+    <Compile Include="OPCAE\NET\Register.cs" />
+    <Compile Include="OPCAE\NET\ShutdownRequestEventArgs.cs" />
+    <Compile Include="OPCAE\NET\ShutdownRequestEventHandler.cs" />
+    <Compile Include="OPCAE\NET\userEventArgs.cs" />
+    <Compile Include="OPCAE\OnEventStruct.cs" />
+    <Compile Include="OPCAE\OPCAEBrowseDirection.cs" />
+    <Compile Include="OPCAE\OPCAEBrowseType.cs" />
+    <Compile Include="OPCAE\OPCAEEventType.cs" />
+    <Compile Include="OPCAE\OPCAEFilters.cs" />
+    <Compile Include="OPCAE\OpcAEServerBrowser.cs" />
+    <Compile Include="OPCAE\OPCConditionState.cs" />
+    <Compile Include="OPCAE\OPCEventServerState.cs" />
+    <Compile Include="OPCAE\OPCNewStates.cs" />
+    <Compile Include="OPC\Common\ComApi.cs" />
+    <Compile Include="OPC\Common\ComException.cs" />
+    <Compile Include="OPC\Common\Host.cs" />
+    <Compile Include="OPC\Common\IOPCCommon.cs" />
+    <Compile Include="OPC\Common\IOPCSecurityNT.cs" />
+    <Compile Include="OPC\Common\IOPCSecurityPrivate.cs" />
+    <Compile Include="OPC\Common\IOPCShutdown.cs" />
+    <Compile Include="OPC\ErrorDescriptions.cs" />
+    <Compile Include="OPC\HRESULTS.cs" />
+    <Compile Include="OPC\OPCException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
